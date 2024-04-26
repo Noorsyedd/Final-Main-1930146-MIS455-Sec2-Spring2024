@@ -12,8 +12,8 @@
         }
 
         .suggestions {
-            background-color: #ffffff;
-            border: 1px solid #ddd;
+            background-color: #fff;
+            border: 1px solid #ccc;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             position: absolute;
@@ -33,11 +33,11 @@
         }
 
         .suggestion-item:hover {
-            background-color: #f5f5f5;
+            background-color: #f9f9f9;
         }
 
         .error-message {
-            color: red;
+            color: #e74c3c;
             font-weight: bold;
             margin-top: 10px;
             display: none;
@@ -56,11 +56,47 @@
                 max-height: 80px;
             }
         }
+
+        /* Styles for the MealDB button */
+        #mealDbBtn {
+            padding: 10px 20px;
+            background-color: #2ecc71;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        #mealDbBtn:hover {
+            background-color: #27ae60;
+        }
+
+        /* Styles for header and footer */
+        header, footer {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Styles for main content */
+        main {
+            padding: 20px;
+        }
+
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Meal Search</h1>
         <button id="mealDbBtn" onclick="goToHome()">MealDB</button>
     </header>
 
