@@ -17,7 +17,9 @@ function displayResults(meals) {
     mealResults.innerHTML = '';
 
     if (meals) {
-        for (let i = 0; i < meals.length; i++) {
+        const mealCount = Math.min(meals.length, 5); // Show only the first 5 meals
+
+        for (let i = 0; i < mealCount; i++) {
             const meal = meals[i];
             const mealDiv = document.createElement('div');
             mealDiv.classList.add('meal');
@@ -39,7 +41,7 @@ function displayResults(meals) {
         const showAllBtn = document.getElementById('showAllBtn');
         if (meals.length > 5) {
             showAllBtn.style.display = 'block';
-            showAllBtn.onclick = () => showAllMeals(meals.slice(5));
+            showAllBtn.onclick = () => showAllMeals(meals.slice(5)); // Display rest of the meals
         } else {
             showAllBtn.style.display = 'none';
         }
