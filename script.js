@@ -1,4 +1,4 @@
-const suggestionsList = ['beef', 'chicken', 'soup', 'burger', 'pizza', 'curry'];
+const suggestionsList = ['beef', 'chicken', 'soup', 'burger', 'pizza', 'curry', 'biryani', 'pasta', 'rice', 'seafood', 'vegetables', 'sandwich', 'dessert', 'breakfast', 'appetizer', 'steak', 'sushi', 'tacos', 'noodles'];
 
 async function searchMeal() {
     const searchInput = document.getElementById('searchInput').value.trim();
@@ -11,8 +11,13 @@ async function searchMeal() {
         if (data.meals) {
             displayResults(data.meals);
             hideSuggestions();
+            hideErrorMessage();
+            hideTrySuggestion();
         } else {
+            displayErrorMessage();
             displaySuggestions();
+            showTrySuggestion();
+            clearPreviousResults();
         }
     } catch (error) {
         console.error('Error fetching data:', error);
@@ -98,4 +103,24 @@ function displaySuggestions() {
 
 function hideSuggestions() {
     document.getElementById('suggestions').style.display = 'none';
+}
+
+function displayErrorMessage() {
+    document.getElementById('errorMessage').style.display = 'block';
+}
+
+function hideErrorMessage() {
+    document.getElementById('errorMessage').style.display = 'none';
+}
+
+function showTrySuggestion() {
+    document.getElementById('trySuggestion').style.display = 'block';
+}
+
+function hideTrySuggestion() {
+    document.getElementById('trySuggestion').style.display = 'none';
+}
+
+function clearPreviousResults() {
+    document.getElementById('mealResults').innerHTML = '';
 }

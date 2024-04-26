@@ -5,6 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meal Search</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles for suggestions */
+        .search-container {
+            position: relative;
+        }
+
+        .suggestions {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: calc(100% + 5px);
+            left: 0;
+            width: calc(100% - 2px);
+            max-height: 150px;
+            overflow-y: auto;
+            z-index: 1;
+            display: none;
+        }
+
+        .suggestion-item {
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .suggestion-item:hover {
+            background-color: #f5f5f5;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+            display: none;
+        }
+
+        
+@media only screen and (max-width: 768px) {
+    /* Adjust suggestions for smaller screens */
+    .suggestions {
+        max-height: 100px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* Adjust suggestions for even smaller screens */
+    .suggestions {
+        max-height: 80px;
+    }
+}
+
+    </style>
 </head>
 <body>
     <header>
@@ -15,7 +69,18 @@
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Search for a meal...">
             <button onclick="searchMeal()">Search</button>
+            <div id="suggestions" class="suggestions"></div>
         </div>
+        <div id="errorMessage" class="error-message">Meal not found. Please try something different.</div>
         <div id="mealResults" class="meal-results"></div>
+        <div id="trySuggestion" class="error-message">If you don't know what to order or search, try my suggestion from the suggestion list.</div>
         <button id="showAllBtn" style="display:none;" onclick="showAllMeals()">SHOW ALL</button>
     </main>
+
+    <footer>
+        <p>&copy; Syed Noor </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
