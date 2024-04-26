@@ -1,3 +1,27 @@
+ /* Styles for suggestions */
+ .suggestions {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1;
+    display: none;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #ddd;
+}
 /* styles.css */
 body {
     font-family: Arial, sans-serif;
