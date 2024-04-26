@@ -43,26 +43,25 @@
             display: none;
         }
 
-        
-@media only screen and (max-width: 768px) {
-    /* Adjust suggestions for smaller screens */
-    .suggestions {
-        max-height: 100px;
-    }
-}
+        @media only screen and (max-width: 768px) {
+            /* Adjust suggestions for smaller screens */
+            .suggestions {
+                max-height: 100px;
+            }
+        }
 
-@media only screen and (max-width: 480px) {
-    /* Adjust suggestions for even smaller screens */
-    .suggestions {
-        max-height: 80px;
-    }
-}
-
+        @media only screen and (max-width: 480px) {
+            /* Adjust suggestions for even smaller screens */
+            .suggestions {
+                max-height: 80px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Meal Search</h1>
+        <button id="mealDbBtn" onclick="goToHome()">MealDB</button>
     </header>
 
     <main>
@@ -82,5 +81,10 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        function goToHome() {
+            window.location.href = "index.html"; // Change "index.html" to your home screen URL
+        }
+    </script>
 </body>
 </html>
