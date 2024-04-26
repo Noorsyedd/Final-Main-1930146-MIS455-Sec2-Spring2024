@@ -55,9 +55,9 @@ button:hover {
 }
 
 .meal img {
-    width: 250px;
+    width: 200px;
     height: auto;
-    margin-right: 100px;
+    margin-right: 10px;
 }
 
 .meal div {
