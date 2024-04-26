@@ -17,9 +17,7 @@ function displayResults(meals) {
     mealResults.innerHTML = '';
 
     if (meals) {
-        const mealCount = meals.length > 5 ? 5 : meals.length;
-
-        for (let i = 0; i < mealCount; i++) {
+        for (let i = 0; i < meals.length; i++) {
             const meal = meals[i];
             const mealDiv = document.createElement('div');
             mealDiv.classList.add('meal');
@@ -38,15 +36,17 @@ function displayResults(meals) {
             mealResults.appendChild(mealDiv);
         }
 
+        const showAllBtn = document.getElementById('showAllBtn');
         if (meals.length > 5) {
-            document.getElementById('showAllBtn').style.display = 'block';
+            showAllBtn.style.display = 'block';
+            showAllBtn.onclick = () => showAllMeals(meals.slice(5));
         } else {
-            document.getElementById('showAllBtn').style.display = 'none';
+            showAllBtn.style.display = 'none';
         }
     }
 }
 
-async function showAllMeals() {
+async function showAllMeals(restOfMeals) {
     const searchInput = document.getElementById('searchInput').value;
     const apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`;
 
@@ -54,7 +54,8 @@ async function showAllMeals() {
         const response = await fetch(apiUrl);
         const data = await response.json();
 
-        displayResults(data.meals);
+        const allMeals = restOfMeals ? restOfMeals.concat(data.meals) : data.meals;
+        displayResults(allMeals);
         document.getElementById('showAllBtn').style.display = 'none';
     } catch (error) {
         console.error('Error fetching data:', error);
