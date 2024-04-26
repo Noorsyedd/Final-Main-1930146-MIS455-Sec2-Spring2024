@@ -3,11 +3,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5; /* Lighter gray background */
+    background-color: #f7f7f7; /* Light gray background */
 }
 
 header, footer {
-    background-color: #006dbf; /* Blue header and footer */
+    background-color: #313334d0; /* Muted greenish-gray header and footer */
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -33,7 +33,7 @@ input[type="text"] {
 
 button {
     padding: 10px 20px;
-    background-color: #ff8c1a; /* Orange button */
+    background-color: #ff6f61; /* Red button */
     color: #fff;
     border: none;
     cursor: pointer;
@@ -42,22 +42,22 @@ button {
 }
 
 button:hover {
-    background-color: #ff9f4d; /* Lighter orange on hover */
+    background-color: #ff8873; /* Lighter red on hover */
 }
 
 .meal {
     display: flex;
     margin-bottom: 20px;
-    background-color: #fff; /* White meal card background */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Drop shadow */
+    background-color: #ddcfdc; /* White meal card background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 1 2px 5px rgba(0, 0, 0, 0.1); /* Drop shadow */
     overflow: hidden; /* Hide overflow content */
 }
 
 .meal img {
-    width: 150px;
+    width: 250px;
     height: auto;
-    margin-right: 20px;
+    margin-right: 100px;
 }
 
 .meal div {
@@ -106,4 +106,14 @@ button:hover {
     button {
         width: 30%;
     }
+}
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #888181ef; /* Add your desired background color */
+    padding: 10px 0; /* Add some padding for better appearance */
+    text-align: center; /* Center align text */
+    z-index: 2; /* Ensure the footer is above other elements */
 }

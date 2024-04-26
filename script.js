@@ -1,14 +1,4 @@
-function goToHome() {
-            window.location.href = "index.html"; // Change "index.html" to your home screen URL
-        }
-
-        function searchMeal() {
-            // Perform the search operation here
-
-            // Clear the search input after displaying the meal results
-            document.getElementById("searchInput").value = "";
-        }
-const suggestionsList = ['beef', 'chicken', 'soup', 'burger', 'pizza', 'curry', 'biryani', 'pasta', 'rice', 'seafood', 'vegetables', 'sandwich', 'dessert', 'breakfast', 'appetizer', 'steak', 'sushi', 'tacos', 'noodles'];
+const suggestionsList = ['Beef', 'Chicken', 'Soup', 'Burger', 'Pizza', 'Curry', 'Biryani', 'Pasta', 'Rice', 'Seafood', 'Sandwich', 'Dessert', 'Breakfast', 'Steak', 'Sushi', 'Tacos', 'Noodles'];
 
 async function searchMeal() {
     const searchInput = document.getElementById('searchInput').value.trim();
@@ -134,4 +124,8 @@ function hideTrySuggestion() {
 
 function clearPreviousResults() {
     document.getElementById('mealResults').innerHTML = '';
+}
+
+function goToHome() {
+    window.location.href = "index.html"; // Change "index.html" to your home screen URL
 }
